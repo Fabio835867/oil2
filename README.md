@@ -45,15 +45,6 @@
             padding: 40px;
         }
 
-        .card {
-            background: #1e293b;
-            padding: 20px;
-            margin: 15px;
-            border-radius: 10px;
-            display: inline-block;
-            width: 250px;
-        }
-
         footer {
             background: #020617;
             padding: 15px;
@@ -71,6 +62,39 @@
             cursor: pointer;
         }
 
+        .search-box {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1e293b;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #0369a1;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px;
+            border-top: 1px solid #334155;
+        }
+
+        tr:hover {
+            background: #334155;
+        }
     </style>
 </head>
 
@@ -80,34 +104,64 @@
     <h1>Test-Oil</h1>
     <nav>
         <a href="#">Home</a>
-        <a href="#servizi">Servizi</a>
+        <a href="#Test">Test</a>
         <a href="#contatti">Contatti</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h2>Energia. Innovazione. Futuro.</h2>
-    <p>Soluzioni intelligenti per efficienza energetica e sostenibilità</p>
+    <h2>Innovazione per un futuro sostenibile.</h2>
+    <p>Soluzioni intelligenti per economia circolare</p>
     <button onclick="alert('Benvenuto su Test-Oil!')">Scopri di più</button>
 </section>
 
-<section id="servizi" class="container">
-    <h2>Servizi</h2>
+<section id="Test" class="container">
+    <h2>Test</h2>
 
-    <div class="card">
-        <h3>Analisi Energetica</h3>
-        <p>Ottimizzazione consumi e performance.</p>
-    </div>
+    <input
+        type="text"
+        id="searchInput"
+        class="search-box"
+        placeholder="Cerca cliente..."
+        onkeyup="searchClient()"
+    >
 
-    <div class="card">
-        <h3>Consulenza</h3>
-        <p>Strategie sostenibili per aziende.</p>
-    </div>
-
-    <div class="card">
-        <h3>Innovazione</h3>
-        <p>Tecnologie avanzate nel settore oil & energy.</p>
-    </div>
+    <table id="clientTable">
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Primo Test</th>
+                <th>Ultimo Test</th>
+                <th>Numero Test</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>A</td>
+                <td>01/01/2026</td>
+                <td>15/06/2026</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>10/02/2026</td>
+                <td>20/06/2026</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>05/03/2026</td>
+                <td>18/06/2026</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>12/04/2026</td>
+                <td>25/06/2026</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
 <section id="contatti" class="container">
@@ -116,8 +170,28 @@
 </section>
 
 <footer>
-    <p>© 2026 Test-Oil | Tutti i diritti riservati</p>
+    <p>© 2026 Test | Tutti i diritti riservati</p>
 </footer>
+
+<script>
+function searchClient() {
+    let input = document.getElementById("searchInput");
+    let filter = input.value.toUpperCase();
+    let table = document.getElementById("clientTable");
+    let tr = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < tr.length; i++) {
+        let td = tr[i].getElementsByTagName("td")[0];
+tContent || td.innerText;
+            tr[i].style.display =
+                txtValue.toUpperCase().indexOf(filter) > -1
+                    ? ""
+                    : "none";
+        }
+    }
+}
+</script>
 
 </body>
 </html>
+
