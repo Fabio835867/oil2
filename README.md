@@ -75,7 +75,8 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            background: #1e293b;
+            background: #ffffff;
+            color: #000000;
             border-radius: 10px;
             overflow: hidden;
         }
@@ -89,11 +90,20 @@
 
         td {
             padding: 12px;
-            border-top: 1px solid #334155;
+            border-top: 1px solid #d1d5db;
+            color: #000000;
+        }
+
+        tr:nth-child(even) {
+            background: #f1f5f9;
+        }
+
+        tr:nth-child(odd) {
+            background: #ffffff;
         }
 
         tr:hover {
-            background: #334155;
+            background: #dbeafe;
         }
     </style>
 </head>
@@ -116,7 +126,7 @@
 </section>
 
 <section id="Test" class="container">
-    <h2>Test</h2>
+    <h2>Elenco Clienti</h2>
 
     <input
         type="text"
@@ -135,31 +145,28 @@
                 <th>Numero Test</th>
             </tr>
         </thead>
+
         <tbody>
-            <tr>
-                <td>A</td>
-                <td>01/01/2026</td>
-                <td>15/06/2026</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>B</td>
-                <td>10/02/2026</td>
-                <td>20/06/2026</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>C</td>
-                <td>05/03/2026</td>
-                <td>18/06/2026</td>
-                <td>7</td>
-            </tr>
-            <tr>
-                <td>D</td>
-                <td>12/04/2026</td>
-                <td>25/06/2026</td>
-                <td>2</td>
-            </tr>
+            <tr><td>A</td><td>01/01/2026</td><td>15/06/2026</td><td>5</td></tr>
+            <tr><td>B</td><td>02/01/2026</td><td>16/06/2026</td><td>3</td></tr>
+            <tr><td>C</td><td>03/01/2026</td><td>17/06/2026</td><td>7</td></tr>
+            <tr><td>D</td><td>04/01/2026</td><td>18/06/2026</td><td>2</td></tr>
+            <tr><td>E</td><td>05/01/2026</td><td>19/06/2026</td><td>9</td></tr>
+            <tr><td>F</td><td>06/01/2026</td><td>20/06/2026</td><td>4</td></tr>
+            <tr><td>G</td><td>07/01/2026</td><td>21/06/2026</td><td>6</td></tr>
+            <tr><td>H</td><td>08/01/2026</td><td>22/06/2026</td><td>8</td></tr>
+            <tr><td>I</td><td>09/01/2026</td><td>23/06/2026</td><td>1</td></tr>
+            <tr><td>J</td><td>10/01/2026</td><td>24/06/2026</td><td>5</td></tr>
+            <tr><td>K</td><td>11/01/2026</td><td>25/06/2026</td><td>7</td></tr>
+            <tr><td>L</td><td>12/01/2026</td><td>26/06/2026</td><td>3</td></tr>
+            <tr><td>M</td><td>13/01/2026</td><td>27/06/2026</td><td>10</td></tr>
+            <tr><td>N</td><td>14/01/2026</td><td>28/06/2026</td><td>2</td></tr>
+            <tr><td>O</td><td>15/01/2026</td><td>29/06/2026</td><td>11</td></tr>
+            <tr><td>P</td><td>16/01/2026</td><td>30/06/2026</td><td>4</td></tr>
+            <tr><td>Q</td><td>17/01/2026</td><td>01/07/2026</td><td>6</td></tr>
+            <tr><td>R</td><td>18/01/2026</td><td>02/07/2026</td><td>8</td></tr>
+            <tr><td>S</td><td>19/01/2026</td><td>03/07/2026</td><td>5</td></tr>
+            <tr><td>T</td><td>20/01/2026</td><td>04/07/2026</td><td>9</td></tr>
         </tbody>
     </table>
 </section>
@@ -170,7 +177,7 @@
 </section>
 
 <footer>
-    <p>© 2026 Test | Tutti i diritti riservati</p>
+    <p>© 2026 Test-Oil | Tutti i diritti riservati</p>
 </footer>
 
 <script>
@@ -182,16 +189,12 @@ function searchClient() {
 
     for (let i = 1; i < tr.length; i++) {
         let td = tr[i].getElementsByTagName("td")[0];
-tContent || td.innerText;
+
+        if (td) {
+            let txtValue = td.textContent || td.innerText;
             tr[i].style.display =
                 txtValue.toUpperCase().indexOf(filter) > -1
                     ? ""
-                    : "none";
-        }
-    }
-}
-</script>
-
-</body>
+          ody>
 </html>
 
